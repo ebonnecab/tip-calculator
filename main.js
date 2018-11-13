@@ -1,14 +1,20 @@
-// Your scripts here
 
-const n = Math.random() * 100;
+const amount = document.getElementById('amount');
+const percent = document.getElementById('percent');
+const calculateButton = document.getElementById('calculate');
+const total = document.getElementById('total');
+const tip = document.getElementById('tip');
 
-console.log(n)
-const m = n.toFixed(2)
-console.log(m);
-console.log(m * 2);
-console.log(Number(m) + 3);
-console.log(typeof m);
+calculateButton.addEventListener('click', function(){
+    const billAmount = amount.value;
+    const tipPercent = percent.value;
+    const percentage = (billAmount * tipPercent) / 100;
+    const totalAmount = +percentage + +billAmount;
+    total.innerHTML = totalAmount;
+    tip.innerHTML = percentage;
+    console.log(total, percentage);
+});
 
-if (typeof m === 'string') {
- return
-} 
+
+
+
